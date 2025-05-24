@@ -1,16 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Welcome to Lakshmy.ai</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lakshmy.ai – Your personal CFO in your pocket</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body { font-family: sans-serif; text-align: center; margin-top: 20vh; }
-    h1 { color: #4CAF50; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    header {
+      text-align: center;
+      max-width: 700px;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 600;
+      color: #157347;
+      margin-bottom: 20px;
+    }
+
+    p.subtitle {
+      font-size: 1.25rem;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .email-box {
+      display: flex;
+      max-width: 420px;
+      width: 100%;
+      background: #f2f2f2;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #ccc;
+    }
+
+    .email-box input {
+      flex: 1;
+      padding: 12px 16px;
+      border: none;
+      font-size: 1rem;
+      outline: none;
+      background: #f2f2f2;
+    }
+
+    .email-box button {
+      background-color: #157347;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .email-box button:hover {
+      background-color: #0f5e3a;
+    }
+
+    footer {
+      margin-top: 80px;
+      font-size: 0.9rem;
+      color: #888;
+      text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .email-box {
+        flex-direction: column;
+      }
+      .email-box input,
+      .email-box button {
+        width: 100%;
+        box-sizing: border-box;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>Welcome to Lakshmy.ai</h1>
-  <p>Your personal CFO in your pocket.</p>
+  <header>
+    <h1>Your personal CFO in your pocket.</h1>
+    <p class="subtitle">Lakshmy.ai empowers you to make smarter financial decisions — effortlessly, intuitively, and confidently.</p>
+
+    <div class="email-box">
+      <input type="email" placeholder="Drop your email for early access" />
+      <button>Notify Me</button>
+    </div>
+  </header>
+
+  <footer>
+    © 2025 Lakshmy.ai. All rights reserved.
+  </footer>
 </body>
 </html>
+
