@@ -7,8 +7,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #A18BD0; /* Soft Lilac */
-      --accent: #A8E6CF;  /* Mint */
+      --primary: #A18BD0;
+      --accent: #A8E6CF;
       --text: #333;
       --bg: #fff;
     }
@@ -22,21 +22,39 @@
     }
 
     header {
-      padding: 80px 20px;
+      position: relative;
+      padding: 100px 20px;
       text-align: center;
       background: linear-gradient(145deg, var(--primary), #D7CBEF);
       color: white;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+      opacity: 0.1;
+      z-index: 0;
     }
 
     header h1 {
       font-size: 2.8rem;
       margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 1;
     }
 
     header p {
       font-size: 1.2rem;
       max-width: 600px;
       margin: 0 auto 30px;
+      position: relative;
+      z-index: 1;
     }
 
     .cta {
@@ -48,6 +66,8 @@
       border-radius: 8px;
       font-size: 1rem;
       cursor: pointer;
+      position: relative;
+      z-index: 1;
     }
 
     section {
@@ -75,6 +95,16 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
 
+    .philosophy-box {
+      background-color: #f1ecfa;
+      border-left: 6px solid var(--primary);
+      padding: 30px;
+      margin-top: 30px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 1.05rem;
+    }
+
     .email-section {
       background-color: var(--primary);
       color: white;
@@ -92,6 +122,18 @@
       font-size: 1rem;
     }
 
+    .email-section button {
+      margin-top: 15px;
+      background-color: white;
+      color: var(--primary);
+      font-weight: 600;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
     footer {
       text-align: center;
       padding: 30px 20px;
@@ -107,9 +149,9 @@
 </head>
 <body>
   <header>
-    <h1>Lakshmy.ai — Your Personal CFO</h1>
-    <p>Financial clarity used to be a privilege. Lakshmy makes it personal, powerful, and finally, possible.</p>
-    <button class="cta">Get Early Access</button>
+    <h1>Meet Lakshmy</h1>
+    <p>The tools of CEOs, now made for you. Lakshmy turns complex financial wisdom into your everyday confidence.</p>
+    <button class="cta" onclick="document.getElementById('early-access').scrollIntoView({ behavior: 'smooth' });">Get Early Access</button>
   </header>
 
   <section>
@@ -118,7 +160,7 @@
       <div class="card">🏡 Plan your home purchase without second-guessing</div>
       <div class="card">💍 Budget for your wedding like a pro</div>
       <div class="card">🎓 Understand future education costs clearly</div>
-      <div class="card">✈️ Say yes to a vacation — without guilt</div>
+      <div class="card">✈️ Say yes to a vacation - without guilt</div>
       <div class="card">🚗 Know what that car or bike EMI really means</div>
       <div class="card">🧓 Retire with clarity, not crossed fingers</div>
     </div>
@@ -129,39 +171,41 @@
     <div class="features">
       <div class="card">You speak or type your goals, dreams, or concerns</div>
       <div class="card">Lakshmy helps you map those into clear, actionable plans</div>
-      <div class="card">All in everyday language — no jargon, no judgment</div>
+      <div class="card">All in everyday language - no jargon, no judgment</div>
     </div>
   </section>
 
   <section>
     <h2>What Makes Lakshmy Different</h2>
     <div class="differentiators">
-      <div class="card">Helps you build investable surplus — not just invest</div>
-      <div class="card">Focuses on planning, not just tracking</div>
-      <div class="card">Responds to your voice, not your spreadsheets</div>
-      <div class="card">Designed for real-life goals, not financial jargon</div>
+      <div class="card">Helps you build investable surplus - not just invest</div>
+      <div class="card">Focuses on planning - not just tracking</div>
+      <div class="card">Responds to your voice - not your spreadsheets</div>
+      <div class="card">Built around your goals - not products</div>
+      <div class="card">Works like a coach - not a calculator</div>
+      <div class="card">Turns dreams into action plans - not confusion</div>
     </div>
   </section>
 
   <section>
     <h2>A Philosophy, Not Just a Product</h2>
-    <p style="text-align:center; max-width:700px; margin: 0 auto;">
-      Lakshmy was born out of a simple belief: financial wisdom should be for everyone. 
-      Inspired by tools used by CFOs and powered by AI, Lakshmy helps you make informed, confident decisions — for yourself and your future.
-    </p>
+    <div class="philosophy-box">
+      Lakshmy was born out of a simple belief: financial wisdom should be for everyone. <br>
+      Inspired by the tools used by CFOs and powered by AI, Lakshmy helps you make informed, confident decisions - for yourself and your future.
+    </div>
   </section>
 
-  <section class="email-section">
+  <section class="email-section" id="early-access">
     <h2>Join Our Private Beta</h2>
     <p>Be the first to try Lakshmy. Get early access and exclusive perks.</p>
     <input type="email" placeholder="Enter your email">
+    <br>
+    <button>Notify Me When It's Live</button>
   </section>
 
   <footer>
     © 2025 Lakshmy.ai • Privacy Policy • Terms • Contact<br>
-    ✨ Lakshmy = Laksh (Goal) + My (You) — Your goals. Your prosperity.
+    ✨ Lakshmy = Laksh (Goal) + My (You) - Your goals. Your prosperity.
   </footer>
 </body>
 </html>
-
-
