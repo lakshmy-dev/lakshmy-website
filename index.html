@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lakshmy.ai - Your Personal CFO</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <meta property="og:title" content="Lakshmy.ai – Your Personal CFO" />
+  <meta property="og:description" content="Plan your financial goals, make better decisions, and own your future. Try Lakshmy before anyone else." />
+  <meta property="og:image" content="https://lakshmy.ai/assets/preview.png" />
+  <meta property="og:url" content="https://lakshmy.ai" />
   <style>
     :root {
       --primary: #A18BD0;
@@ -19,6 +23,7 @@
       background-color: var(--bg);
       color: var(--text);
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
     header {
@@ -28,6 +33,7 @@
       background: linear-gradient(145deg, var(--primary), #D7CBEF);
       color: white;
       overflow: hidden;
+      animation: fadeIn 1s ease-out;
     }
 
     header::before {
@@ -43,11 +49,6 @@
       background-position: center;
       opacity: 0.58;
       z-index: 0;
-    }
-
-    @keyframes animateBackground {
-      from { background-position: 0 0; }
-      to { background-position: 1000px 1000px; }
     }
 
     header h1,
@@ -78,8 +79,8 @@
 
     .cta {
       padding: 12px 24px;
-      background-color: white;
-      color: var(--primary);
+      background: linear-gradient(135deg, #A18BD0, #A8E6CF);
+      color: white;
       font-weight: 600;
       border: none;
       border-radius: 8px;
@@ -87,12 +88,18 @@
       cursor: pointer;
       position: relative;
       z-index: 1;
+      transition: transform 0.2s ease;
+    }
+
+    .cta:hover {
+      transform: scale(1.05);
     }
 
     section {
       padding: 60px 20px;
       max-width: 900px;
       margin: 0 auto;
+      animation: fadeIn 1s ease-out;
     }
 
     h2 {
@@ -123,7 +130,6 @@
       text-align: center;
       font-size: 1.1rem;
       box-shadow: 0 10px 25px rgba(161, 139, 208, 0.2);
-      transition: all 0.3s ease;
     }
 
     .email-section {
@@ -133,26 +139,44 @@
       padding: 60px 20px;
     }
 
-    .email-section input {
-      padding: 12px;
+    .email-section form {
+      margin-top: 20px;
+    }
+
+    .email-section input[type="email"] {
+      padding: 12px 40px 12px 40px;
       border: none;
       border-radius: 8px;
       width: 60%;
       max-width: 300px;
       margin-top: 10px;
       font-size: 1rem;
+      background: url('https://img.icons8.com/ios-filled/24/000000/new-post.png') no-repeat 10px center;
+      background-color: white;
+      background-size: 20px;
+      color: black;
     }
 
     .email-section button {
       margin-top: 15px;
-      background-color: white;
-      color: var(--primary);
+      background: linear-gradient(135deg, #A18BD0, #A8E6CF);
+      color: white;
       font-weight: 600;
       padding: 10px 20px;
       border: none;
       border-radius: 8px;
       font-size: 1rem;
       cursor: pointer;
+    }
+
+    .success-message {
+      display: none;
+      margin-top: 20px;
+      font-size: 1rem;
+      background-color: #ffffffcc;
+      color: #4caf50;
+      padding: 10px 20px;
+      border-radius: 8px;
     }
 
     footer {
@@ -165,6 +189,11 @@
     @media (max-width: 600px) {
       header h1 { font-size: 2rem; }
       .email-section input { width: 90%; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -213,7 +242,7 @@
   <section>
     <h2>A Philosophy, Not Just a Product</h2>
     <div class="philosophy-box">
-      Lakshmy was born out of a simple belief: Financial wisdom should be for everyone. <br>
+      Lakshmy was born out of a simple belief: Financial wisdom should be for everyone. <br />
       Inspired by the tools used by CFOs and powered by AI, Lakshmy helps you make informed, confident decisions - for yourself and your future.
     </div>
   </section>
@@ -221,22 +250,33 @@
   <section class="email-section" id="early-access">
     <h2>Join Our Private Beta</h2>
     <p>Be the first to try Lakshmy. Get early access and exclusive perks.</p>
-    <form action="https://api.web3forms.com/submit" method="POST">
-      <input type="hidden" name="access_key" value="97c722fa-330c-4a97-8545-20d6f1eb98b2">
-      <input type="hidden" name="redirect" value="https://lakshmy.ai/signedup.html">
-      <input type="hidden" name="subject" value="New Early Access Signup from Lakshmy">
+    <form id="web3form" action="https://api.web3forms.com/submit" method="POST" onsubmit="showSuccessMessage(); return true;">
+      <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+      <input type="hidden" name="subject" value="New Early Access Signup from Lakshmy" />
       <input type="checkbox" name="botcheck" style="display:none;">
-      <input type="email" name="email" placeholder="Enter your email" required>
-      <br>
-      <button type="submit">Notify Me When It's Live</button>
+      <input type="email" name="email" placeholder="Enter your email" required />
+      <br />
+      <button type="submit">Join the Early List</button>
     </form>
+    <div id="success-message" class="success-message">✅ Thanks! You're officially on the early access list.</div>
+    <p style="margin-top: 10px; font-size: 0.85rem;">🔒 We respect your privacy. No spam, ever.</p>
   </section>
 
   <footer>
-    © 2025 Lakshmy.ai • Privacy Policy • Terms • Contact<br>
+    © 2025 Lakshmy.ai • Privacy Policy • Terms • Contact<br />
     ✨ Lakshmy = Laksh (Goal) + My (You) - Your goals. Your prosperity.
   </footer>
+
+  <script>
+    function showSuccessMessage() {
+      setTimeout(() => {
+        document.getElementById('success-message').style.display = 'block';
+        document.getElementById('web3form').reset();
+      }, 500);
+    }
+  </script>
 </body>
 </html>
+
 
 
