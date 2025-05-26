@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <meta property="og:title" content="Lakshmy.ai – Your Personal CFO" />
   <meta property="og:description" content="Plan your financial goals, make better decisions, and own your future. Try Lakshmy before anyone else." />
-  <meta property="og:image" content="https://lakshmy.ai/assets/preview.png" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/lakshmy-dev/lakshmy-website/main/og-image.png" />
   <meta property="og:url" content="https://lakshmy.ai" />
   <style>
     :root {
@@ -15,6 +15,7 @@
       --accent: #A8E6CF;
       --text: #333;
       --bg: #fff;
+      --button-gradient: linear-gradient(135deg, #6C4AB6, #A18BD0);
     }
 
     body {
@@ -79,7 +80,7 @@
 
     .cta {
       padding: 12px 24px;
-      background: linear-gradient(135deg, #A18BD0, #A8E6CF);
+      background: var(--button-gradient);
       color: white;
       font-weight: 600;
       border: none;
@@ -159,7 +160,7 @@
 
     .email-section button {
       margin-top: 15px;
-      background: linear-gradient(135deg, #A18BD0, #A8E6CF);
+      background: var(--button-gradient);
       color: white;
       font-weight: 600;
       padding: 10px 20px;
