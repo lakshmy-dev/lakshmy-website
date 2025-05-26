@@ -170,12 +170,12 @@
 </head>
 <body>
   <header>
-  <h3 style="margin-bottom: 0.25rem; font-weight: 400;">Say hi to</h3>
-  <h1 style="text-transform: uppercase; margin-top: 0;">Lakshmy</h1>
-  <h2>Your Personal CFO in Your Pocket</h2>
-  <h3>Inspired by the tools used by CFOs, powered by AI, and built with empathy, Lakshmy helps you plan your financial goals, make deeply informed decisions, and build a better financial future.</h3>
-  <button class="cta" onclick="document.getElementById('early-access').scrollIntoView({ behavior: 'smooth' });">Get Early Access</button>
-</header>
+    <h3 style="margin-bottom: 0.25rem; font-weight: 400;">Say hi to</h3>
+    <h1 style="text-transform: uppercase; margin-top: 0;">Lakshmy</h1>
+    <h2>Your Personal CFO in Your Pocket</h2>
+    <h3>Inspired by the tools used by CFOs, powered by AI, and built with empathy, Lakshmy helps you plan your financial goals, make deeply informed decisions, and build a better financial future.</h3>
+    <button class="cta" onclick="document.getElementById('early-access').scrollIntoView({ behavior: 'smooth' });">Get Early Access</button>
+  </header>
 
   <section>
     <h2>For all the real-life money decisions you wish someone helped you make.</h2>
@@ -221,9 +221,15 @@
   <section class="email-section" id="early-access">
     <h2>Join Our Private Beta</h2>
     <p>Be the first to try Lakshmy. Get early access and exclusive perks.</p>
-    <input type="email" placeholder="Enter your email">
-    <br>
-    <button>Notify Me When It's Live</button>
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="97c722fa-330c-4a97-8545-20d6f1eb98b2">
+      <input type="hidden" name="redirect" value="https://lakshmy.ai/signedup.html">
+      <input type="hidden" name="subject" value="New Early Access Signup from Lakshmy">
+      <input type="checkbox" name="botcheck" style="display:none;">
+      <input type="email" name="email" placeholder="Enter your email" required>
+      <br>
+      <button type="submit">Notify Me When It's Live</button>
+    </form>
   </section>
 
   <footer>
@@ -232,4 +238,5 @@
   </footer>
 </body>
 </html>
+
 
