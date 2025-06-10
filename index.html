@@ -1,283 +1,622 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lakshmy.ai - Your Personal CFO</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-  <meta property="og:title" content="Lakshmy.ai – Your Personal CFO" />
-  <meta property="og:description" content="Plan your financial goals, make better decisions, and own your future. Try Lakshmy before anyone else." />
-  <meta property="og:image" content="https://lakshmy.ai/assets/og-image.png" />
-  <meta property="og:url" content="https://lakshmy.ai" />
-  <style>
-    :root {
-      --primary: #A18BD0;
-      --accent: #A8E6CF;
-      --text: #333;
-      --bg: #fff;
-      --button-solid: #6C4AB6;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-
-    header {
-      position: relative;
-      padding: 140px 20px;
-      text-align: center;
-      background: linear-gradient(145deg, var(--primary), #D7CBEF);
-      color: white;
-      overflow: hidden;
-      animation: fadeIn 1s ease-out;
-    }
-
-    header::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('/blurry-gradient-bg.svg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      opacity: 0.58;
-      z-index: 0;
-    }
-
-    header h1,
-    header h2,
-    header h3 {
-      position: relative;
-      z-index: 1;
-      margin: 0;
-    }
-
-    header h1 {
-      font-size: 2.6rem;
-      margin-bottom: 0.5rem;
-    }
-
-    header h2 {
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-      font-weight: 400;
-    }
-
-    header h3 {
-      font-size: 1.1rem;
-      font-weight: 400;
-      max-width: 680px;
-      margin: 0 auto 30px;
-    }
-
-    .cta {
-      padding: 12px 24px;
-      background-color: var(--button-solid);
-      color: white;
-      font-weight: 600;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      position: relative;
-      z-index: 1;
-      transition: transform 0.2s ease;
-    }
-
-    .cta:hover {
-      transform: scale(1.05);
-    }
-
-    section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: 0 auto;
-      animation: fadeIn 1s ease-out;
-    }
-
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    .features, .differentiators {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: #f9f9f9;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-
-    .philosophy-box {
-      background: linear-gradient(145deg, #e9ddf9, #f9f5ff);
-      border-left: 6px solid var(--primary);
-      padding: 40px;
-      margin-top: 30px;
-      border-radius: 14px;
-      text-align: center;
-      font-size: 1.1rem;
-      box-shadow: 0 10px 25px rgba(161, 139, 208, 0.2);
-    }
-
-    .email-section {
-      background-color: var(--primary);
-      color: white;
-      text-align: center;
-      padding: 60px 20px;
-    }
-
-    .email-section form {
-      margin-top: 20px;
-    }
-
-    .email-section input[type="email"] {
-      padding: 12px 40px 12px 40px;
-      border: none;
-      border-radius: 8px;
-      width: 60%;
-      max-width: 300px;
-      margin-top: 10px;
-      font-size: 1rem;
-      background: url('https://img.icons8.com/ios-filled/24/000000/new-post.png') no-repeat 10px center;
-      background-color: white;
-      background-size: 20px;
-      color: black;
-    }
-
-    .email-section button {
-      margin-top: 15px;
-      background-color: var(--button-solid);
-      color: white;
-      font-weight: 600;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    .success-message {
-      display: none;
-      margin-top: 20px;
-      font-size: 1rem;
-      background-color: #ffffffcc;
-      color: #4caf50;
-      padding: 10px 20px;
-      border-radius: 8px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 0.9rem;
-      color: #777;
-    }
-
-    @media (max-width: 600px) {
-      header h1 { font-size: 2rem; }
-      .email-section input { width: 90%; }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakshmy - India's AI Personal Finance Coach</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Deepest Blue & Electric Lavender -->
+    <!-- Application Structure Plan: The SPA is a narrative-driven, single-page scrolling landing page. This structure was chosen to guide the user through a persuasive story, starting with a strong hook (Hero), identifying a relatable problem (Problem), presenting Lakshmy as the perfect solution (Solution), proactively building confidence by addressing data privacy concerns (Trust), detailing the concrete benefits (Features), showcasing advanced capabilities (Use Cases), reinforcing its unique value (Differentiation), and ending with a clear call-to-action (CTA). This flow is optimized for conversion and excitement. -->
+    <!-- Visualization & Content Choices: The hero section uses a single, dynamically animated screen with smooth scrolling to showcase a complete, high-impact AI conversation. Other mock-ups remain animated to showcase dynamism. The comparison box is seamlessly integrated with the dark theme, using a clean border and animated checkmarks for a sophisticated highlight. A canvas-based particle background adds a high-tech feel. Icons are refined, and micro-interactions (hover effects) are added to increase engagement and polish. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#0a192f',
+                        'secondary-dark': '#020c1b',
+                        'accent-lavender': '#c792ea',
+                        'accent-gold': '#d4af37',
+                        'light-slate': '#ccd6f6',
+                        'slate': '#8892b0',
+                        'dark-slate': '#495670',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0a192f; }
+        #bg-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.35; }
+        .content-wrapper { position: relative; z-index: 1; }
+        .hero-gradient-blue { background: linear-gradient(180deg, #020c1b 0%, #0a192f 100%); }
+        .cta-button {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(212, 175, 55, 0.2), 0 4px 6px -2px rgba(212, 175, 55, 0.15);
+        }
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .phone-mockup-container {
+            animation: float 4s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .lakshmy-way-box .animated-check {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .chat-bubble {
+             opacity: 0;
+             transform: scale(0.9);
+             transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .typing-indicator span {
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+        .typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+        .typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes bounce {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1.0); }
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <h3 style="margin-bottom: 0.25rem; font-weight: 400;">Say hi to</h3>
-    <h1 style="text-transform: uppercase; margin-top: 0;">Lakshmy</h1>
-    <h2>Your Personal CFO in Your Pocket</h2>
-    <h3>Inspired by the tools used by CFOs, powered by AI, and built with empathy, Lakshmy helps you plan your financial goals, make deeply informed decisions, and build a better financial future.</h3>
-    <button class="cta" onclick="document.getElementById('early-access').scrollIntoView({ behavior: 'smooth' });">Get Early Access</button>
-  </header>
+<body class="bg-primary-dark text-slate">
+    <canvas id="bg-canvas"></canvas>
+    <div class="content-wrapper">
+        <header id="header" class="bg-primary-dark/80 backdrop-blur-md fixed top-0 left-0 right-0 z-50 shadow-lg shadow-black/20">
+            <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+                <a href="#" class="flex items-center space-x-2">
+                    <span class="text-2xl font-bold text-light-slate">Lakshmy</span>
+                </a>
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#features" class="text-slate hover:text-accent-lavender transition">Features</a>
+                    <a href="#use-cases" class="text-slate hover:text-accent-lavender transition">Use Cases</a>
+                    <a href="#trust" class="text-slate hover:text-accent-lavender transition">Trust</a>
+                </nav>
+                <a href="#cta" class="cta-button bg-accent-gold text-primary-dark font-bold py-2 px-5 rounded-lg text-sm">
+                    Get Early Access
+                </a>
+            </div>
+        </header>
 
-  <section>
-    <h2>For all the real-life money decisions you wish someone helped you make.</h2>
-    <div class="features">
-      <div class="card">🏡 Plan your home purchase without second-guessing</div>
-      <div class="card">💍 Budget for your wedding like a pro</div>
-      <div class="card">🎓 Understand future education costs clearly</div>
-      <div class="card">✈️ Say yes to a vacation - without guilt</div>
-      <div class="card">🚗 Know what that car or bike EMI really means</div>
-      <div class="card">🧓 Retire with clarity, not crossed fingers</div>
+        <main>
+            <section id="hero" class="hero-gradient-blue pt-24 md:pt-32 pb-16">
+                <div class="container mx-auto px-6 text-center">
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-light-slate leading-tight">
+                        Your Personal <br class="md:hidden"><span class="text-accent-lavender">CFO in your Pocket.</span>
+                    </h1>
+                    <div class="mt-8 max-w-4xl mx-auto text-lg text-slate text-left bg-primary-dark/30 p-6 rounded-lg border border-dark-slate">
+                        <p class="font-bold text-light-slate text-center text-xl">Stop just tracking the past. Start building your future.</p>
+                        <p class="mt-4 text-center">Most finance apps are glorified spreadsheets. Lakshmy is your dedicated financial partner. We built it by combining three powerful ideas:</p>
+                        <div class="mt-6 grid md:grid-cols-3 gap-6 text-center">
+                            <div>
+                                <h3 class="font-semibold text-accent-lavender">CFO-Grade Intelligence</h3>
+                                <p class="text-sm mt-1">Model your financial future and make decisions with total confidence.</p>
+                            </div>
+                             <div>
+                                <h3 class="font-semibold text-accent-lavender">Empathetic AI Coach</h3>
+                                <p class="text-sm mt-1">Get personalized, non-judgmental guidance that adapts to your unique life.</p>
+                            </div>
+                             <div>
+                                <h3 class="font-semibold text-accent-lavender">Conversational Simplicity</h3>
+                                <p class="text-sm mt-1">Manage your money as easily and naturally as you chat with a friend.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <form id="waitlist-form-hero" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="97c722fa-330c-4a97-8545-20d6f1eb98b2" />
+                        <input type="hidden" name="subject" value="New Early Access Signup from Lakshmy" />
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                        
+                        <div class="mt-10 max-w-md mx-auto flex flex-col sm:flex-row gap-3">
+                            <input type="email" name="email" required placeholder="Enter your email address" class="flex-grow w-full px-4 py-3 rounded-lg bg-secondary-dark border-dark-slate text-light-slate placeholder-slate focus:ring-accent-lavender focus:border-accent-lavender transition shadow-sm">
+                            <button type="submit" class="cta-button bg-accent-lavender hover:bg-opacity-90 text-primary-dark font-bold py-3 px-8 rounded-lg">
+                                Join the Waitlist
+                            </button>
+                        </div>
+                    </form>
+                    <div id="form-message-hero" class="mt-4 text-accent-lavender font-medium h-5"></div>
+                    
+                    <div class="mt-12 md:mt-16 flex justify-center phone-mockup-container">
+                        <div class="relative w-full max-w-sm">
+                            <div class="relative mx-auto border-black bg-black border-[10px] rounded-[2.5rem] h-[550px] w-[270px] shadow-2xl shadow-black/40">
+                                <div class="rounded-[2rem] overflow-hidden w-full h-full bg-primary-dark">
+                                    <div id="hero-chat-container" class="p-3 space-y-3 text-sm h-full overflow-y-auto scroll-smooth">
+                                        <!-- Chat messages will be injected here by JS -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="how-it-works" class="py-20 bg-primary-dark section-fade-in">
+                 <div class="container mx-auto px-6">
+                    <div class="text-center">
+                        <h2 class="text-3xl md:text-4xl font-bold text-light-slate">Feeling Lost in the Financial Maze?</h2>
+                        <p class="mt-4 max-w-3xl mx-auto text-lg text-slate">You work hard for your money. But figuring out where it all goes can feel like an impossible challenge.</p>
+                    </div>
+                    <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                        <div class="bg-secondary-dark p-6 rounded-xl border border-dark-slate">
+                            <span class="text-4xl">💸</span>
+                            <h3 class="mt-4 text-lg font-semibold text-light-slate">Where does it go?</h3>
+                            <p class="mt-2 text-slate">Tracking countless small UPI payments and cash spends feels overwhelming.</p>
+                        </div>
+                        <div class="bg-secondary-dark p-6 rounded-xl border border-dark-slate">
+                             <span class="text-4xl">🤯</span>
+                            <h3 class="mt-4 text-lg font-semibold text-light-slate">Too much jargon?</h3>
+                            <p class="mt-2 text-slate">Most financial apps are complex, drowning you in data you don't know how to use.</p>
+                        </div>
+                        <div class="bg-secondary-dark p-6 rounded-xl border border-dark-slate">
+                             <span class="text-4xl">🤔</span>
+                            <h3 class="mt-4 text-lg font-semibold text-light-slate">Who can you trust?</h3>
+                            <p class="mt-2 text-slate">Giving apps access to your sensitive financial data feels inherently risky.</p>
+                        </div>
+                        <div class="bg-secondary-dark p-6 rounded-xl border border-dark-slate">
+                             <span class="text-4xl">🎯</span>
+                            <h3 class="mt-4 text-lg font-semibold text-light-slate">Where to even start?</h3>
+                            <p class="mt-2 text-slate">You want to save and build wealth, but the first step is always the hardest.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="features" class="py-20 bg-secondary-dark section-fade-in">
+                <div class="container mx-auto px-6">
+                    <div class="text-center">
+                        <h2 class="text-3xl md:text-4xl font-bold text-light-slate">Everything to Simplify Your Financial Life</h2>
+                        <p class="mt-4 max-w-3xl mx-auto text-lg text-slate">Lakshmy is a comprehensive partner designed to bring clarity, build habits, and foster confidence.</p>
+                    </div>
+                    <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                         <div class="feature-card bg-primary-dark p-8 rounded-xl border border-dark-slate">
+                            <span class="text-3xl text-accent-lavender">💬</span>
+                            <h3 class="mt-4 text-xl font-bold text-light-slate">Effortless Logging</h3>
+                            <p class="mt-2 text-slate">Just text or voice-note your spends. Lakshmy gets it, logs it, and categorizes it instantly.</p>
+                        </div>
+                        <div class="feature-card bg-primary-dark p-8 rounded-xl border border-dark-slate">
+                            <span class="text-3xl text-accent-lavender">✨</span>
+                            <h3 class="mt-4 text-xl font-bold text-light-slate">Clarity at a Glance</h3>
+                            <p class="mt-2 text-slate">Get simple summaries and powerful insights. Finally understand where your money truly goes.</p>
+                        </div>
+                        <div class="feature-card bg-primary-dark p-8 rounded-xl border border-dark-slate">
+                            <span class="text-3xl text-accent-lavender">🎯</span>
+                            <h3 class="mt-4 text-xl font-bold text-light-slate">Achieve Your Goals</h3>
+                            <p class="mt-2 text-slate">Chat with Lakshmy to set up goals like an emergency fund or a vacation, and track your progress.</p>
+                        </div>
+                        <div class="feature-card bg-primary-dark p-8 rounded-xl border border-dark-slate">
+                            <span class="text-3xl text-accent-lavender">🧠</span>
+                            <h3 class="mt-4 text-xl font-bold text-light-slate">Build Better Habits</h3>
+                            <p class="mt-2 text-slate">Receive smart, gentle nudges to log daily expenses or celebrate savings milestones.</p>
+                        </div>
+                        <div class="feature-card bg-primary-dark p-8 rounded-xl border border-dark-slate">
+                            <span class="text-3xl text-accent-lavender">💡</span>
+                            <h3 class="mt-4 text-xl font-bold text-light-slate">Learn As You Go</h3>
+                            <p class="mt-2 text-slate">Get bite-sized financial education in context, explaining concepts relevant to your own situation.</p>
+                        </div>
+                        <div class="feature-card bg-primary-dark p-8 rounded-xl border border-dark-slate">
+                            <span class="text-3xl text-accent-lavender">❤️</span>
+                            <h3 class="mt-4 text-xl font-bold text-light-slate">Designed for India</h3>
+                            <p class="mt-2 text-slate">From local spending habits to relevant context, Lakshmy is built from the ground up for you.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="use-cases" class="py-20 bg-primary-dark section-fade-in">
+                <div class="container mx-auto px-6">
+                     <div class="text-center">
+                        <h2 class="text-3xl md:text-4xl font-bold text-light-slate">From Simple Questions to Big Goals</h2>
+                        <p class="mt-4 max-w-3xl mx-auto text-lg text-slate">Lakshmy is your partner for every step of your financial journey.</p>
+                    </div>
+                    <div class="mt-12 grid md:grid-cols-2 gap-8 lg:gap-12">
+                        <div class="bg-secondary-dark p-6 rounded-xl border border-dark-slate">
+                            <h3 class="font-bold text-light-slate text-lg mb-4 text-center">Create & Track Goals</h3>
+                            <div class="relative mx-auto border-black bg-black border-[8px] rounded-[1.5rem] h-[350px] w-full max-w-[220px]">
+                                <div class="rounded-[1.2rem] overflow-hidden w-full h-full bg-primary-dark">
+                                    <div id="goal-chat-container" class="p-2 space-y-2 text-xs h-full overflow-y-auto scroll-smooth">
+                                        <!-- Goal chat messages injected here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="bg-secondary-dark p-6 rounded-xl border border-dark-slate">
+                            <h3 class="font-bold text-light-slate text-lg mb-4 text-center">Plan for the Future</h3>
+                             <div class="relative mx-auto border-black bg-black border-[8px] rounded-[1.5rem] h-[350px] w-full max-w-[220px]">
+                                <div class="rounded-[1.2rem] overflow-hidden w-full h-full bg-primary-dark">
+                                    <div id="retire-chat-container" class="p-2 space-y-2 text-xs h-full overflow-y-auto scroll-smooth">
+                                        <!-- Retirement chat messages injected here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="trust" class="py-20 bg-secondary-dark section-fade-in">
+                <div class="container mx-auto px-6">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div class="text-center lg:text-left">
+                            <h2 class="text-3xl md:text-4xl font-bold text-light-slate">Your Trust is Our Foundation</h2>
+                            <p class="mt-4 text-lg text-slate">We are building Lakshmy differently. Your privacy isn't an afterthought; it's our starting point. The path to financial wellness begins with absolute peace of mind.</p>
+                        </div>
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div class="bg-primary-dark p-6 rounded-xl flex items-start space-x-4 border border-dark-slate">
+                                <span class="text-3xl mt-1 text-accent-lavender">🎮</span>
+                                <div>
+                                    <h3 class="font-semibold text-lg text-light-slate">You Are In Control</h3>
+                                    <p class="text-slate text-sm">Log expenses manually. No bank-linking required. Your sensitive data stays private.</p>
+                                </div>
+                            </div>
+                            <div class="bg-primary-dark p-6 rounded-xl flex items-start space-x-4 border border-dark-slate">
+                                <span class="text-3xl mt-1 text-accent-lavender">🔍</span>
+                                <div>
+                                    <h3 class="font-semibold text-lg text-light-slate">Total Transparency</h3>
+                                    <p class="text-slate text-sm">Your data is only used to provide you with powerful, personalized insights inside the app.</p>
+                                </div>
+                            </div>
+                             <div class="bg-primary-dark p-6 rounded-xl flex items-start space-x-4 border border-dark-slate">
+                                <span class="text-3xl mt-1 text-accent-lavender">💡</span>
+                                <div>
+                                    <h3 class="font-semibold text-lg text-light-slate">Guidance, Not Sales</h3>
+                                    <p class="text-slate text-sm">We are here to empower you with knowledge, not to push financial products.</p>
+                                </div>
+                            </div>
+                             <div class="bg-primary-dark p-6 rounded-xl flex items-start space-x-4 border border-dark-slate">
+                                <span class="text-3xl mt-1 text-accent-lavender">🔑</span>
+                                <div>
+                                    <h3 class="font-semibold text-lg text-light-slate">Your Data, Your Property</h3>
+                                    <p class="text-slate text-sm">Easily export or delete your data at any time. We believe in earning your loyalty, not locking you in.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-20 bg-primary-dark section-fade-in">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-12">
+                         <h2 class="text-3xl md:text-4xl font-bold text-light-slate">Beyond a Tool-A True Financial Partner</h2>
+                         <p class="mt-4 max-w-3xl mx-auto text-lg text-slate">Other apps give you charts. Lakshmy gives you conversation and confidence.</p>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div class="p-8 bg-secondary-dark rounded-xl border border-dark-slate">
+                            <h3 class="text-2xl font-bold text-slate text-center">The Old Way</h3>
+                            <ul class="mt-6 space-y-4 text-slate">
+                                <li>❌ Cluttered interfaces</li>
+                                <li>❌ Confusing charts & jargon</li>
+                                <li>❌ Requires linking bank accounts</li>
+                                <li>❌ One-size-fits-all approach</li>
+                                <li>❌ Focuses only on numbers</li>
+                            </ul>
+                        </div>
+                        <div id="lakshmy-way" class="p-8 rounded-xl bg-secondary-dark border border-dark-slate">
+                            <h3 class="text-2xl font-bold text-center text-accent-lavender">The Lakshmy Way</h3>
+                             <ul class="mt-6 space-y-4 font-medium text-light-slate">
+                                <li class="flex items-start animated-check"><span class="mr-2 text-accent-lavender">✅</span><span>Simple, conversational chat</span></li>
+                                <li class="flex items-start animated-check"><span class="mr-2 text-accent-lavender">✅</span><span>Clear, actionable insights</span></li>
+                                <li class="flex items-start animated-check"><span class="mr-2 text-accent-lavender">✅</span><span>Built on trust, no linking required</span></li>
+                                <li class="flex items-start animated-check"><span class="mr-2 text-accent-lavender">✅</span><span>Tailored for Indian users</span></li>
+                                <li class="flex items-start animated-check"><span class="mr-2 text-accent-lavender">✅</span><span>Focuses on changing habits</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cta" class="py-20 bg-secondary-dark section-fade-in">
+                <div class="container mx-auto px-6 text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-light-slate">Ready to Feel in Control of Your Money?</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-slate">Join a select group of users who will shape the future of personal finance in India. Sign up for early access today.</p>
+                     <form id="waitlist-form-cta" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="97c722fa-330c-4a97-8545-20d6f1eb98b2" />
+                        <input type="hidden" name="subject" value="New Early Access Signup from Lakshmy" />
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                        <div class="mt-8 max-w-md mx-auto flex flex-col sm:flex-row gap-3">
+                            <input type="email" name="email" required placeholder="Enter your email address" class="flex-grow w-full px-4 py-3 rounded-lg bg-primary-dark border-dark-slate text-light-slate placeholder-slate focus:ring-accent-lavender focus:border-accent-lavender transition shadow-sm">
+                            <button type="submit" class="cta-button bg-accent-gold text-primary-dark font-bold py-3 px-8 rounded-lg">
+                                Get Early Access
+                            </button>
+                        </div>
+                    </form>
+                    <div id="form-message-cta" class="mt-4 text-accent-lavender font-medium h-5"></div>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="bg-primary-dark border-t border-secondary-dark">
+            <div class="container mx-auto px-6 py-8">
+                 <div class="text-center mb-6">
+                    <span class="text-2xl font-bold text-light-slate">Lakshmy</span>
+                    <p class="text-sm text-slate mt-1">Lakshmy = Laksh (Goal) + My (You)<br>Your Goals. Your Prosperity.</p>
+                </div>
+                <div class="flex flex-col md:flex-row justify-between items-center text-center">
+                     <div class="flex justify-center space-x-6 mb-6 md:mb-0">
+                        <a href="#" class="text-slate hover:text-accent-lavender">About Us</a>
+                        <a href="#" class="text-slate hover:text-accent-lavender">Privacy</a>
+                        <a href="#" class="text-slate hover:text-accent-lavender">Terms</a>
+                        <a href="#" class="text-slate hover:text-accent-lavender">Contact</a>
+                    </div>
+                     <div class="text-sm text-slate">
+                        <p>&copy; 2025 Lakshmy. Made with ❤️ for India.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
-  </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Particle background animation
+            const canvas = document.getElementById('bg-canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
 
-  <section>
-    <h2>Smart Tech. Human Simplicity.</h2>
-    <div class="features">
-      <div class="card">You speak or type your goals, dreams, or concerns</div>
-      <div class="card">Lakshmy helps you map those into clear, actionable plans</div>
-      <div class="card">All in everyday language - no jargon, no judgment</div>
-    </div>
-  </section>
+            let particles = [];
+            const particleCount = Math.floor(canvas.width / 35); 
 
-  <section>
-    <h2>What Makes Lakshmy Different</h2>
-    <div class="differentiators">
-      <div class="card">Helps you build investable surplus - not just invest</div>
-      <div class="card">Focuses on planning - not just tracking</div>
-      <div class="card">Responds to your voice - not your spreadsheets</div>
-      <div class="card">Built around your goals - not products</div>
-      <div class="card">Works like a coach - not a calculator</div>
-      <div class="card">Turns dreams into action plans - not confusion</div>
-    </div>
-  </section>
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 1.5 + 0.5;
+                    this.speedX = (Math.random() * 0.3 - 0.15);
+                    this.speedY = (Math.random() * 0.3 - 0.15);
+                }
+                update() {
+                    if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+                    if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                }
+                draw() {
+                    ctx.fillStyle = '#495670';
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
 
-  <section>
-    <h2>A Philosophy, Not Just a Product</h2>
-    <div class="philosophy-box">
-      Lakshmy was born out of a simple belief: Financial wisdom should be for everyone. <br />
-      Inspired by the tools used by CFOs and powered by AI, Lakshmy helps you make informed, confident decisions - for yourself and your future.
-    </div>
-  </section>
+            function initParticles() {
+                particles = [];
+                for (let i = 0; i < particleCount; i++) {
+                    particles.push(new Particle());
+                }
+            }
 
-  <section class="email-section" id="early-access">
-    <h2>Join Our Private Beta</h2>
-    <p>Be the first to try Lakshmy. Get early access and exclusive perks.</p>
-    <form id="web3form" action="https://api.web3forms.com/submit" method="POST" onsubmit="showSuccessMessage(); return true;">
-      <input type="hidden" name="access_key" value="97c722fa-330c-4a97-8545-20d6f1eb98b2" />
-      <input type="hidden" name="subject" value="New Early Access Signup from Lakshmy" />
-      <input type="checkbox" name="botcheck" style="display:none;">
-      <input type="email" name="email" placeholder="Enter your email" required />
-      <br />
-      <button type="submit">Join the Early List</button>
-    </form>
-    <div id="success-message" class="success-message">✅ Thanks! You're officially on the early access list.</div>
-    <p style="margin-top: 10px; font-size: 0.85rem;">🔒 We respect your privacy. No spam, ever.</p>
-  </section>
+            function animateParticles() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                    particles[i].draw();
+                    for (let j = i; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        if (distance < 120) {
+                            ctx.strokeStyle = `rgba(73, 86, 112, ${1 - distance/120})`;
+                            ctx.lineWidth = 0.2;
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(animateParticles);
+            }
 
-  <footer>
-    © 2025 Lakshmy.ai • Privacy Policy • Terms • Contact<br />
-    ✨ Lakshmy = Laksh (Goal) + My (You) - Your goals. Your prosperity.
-  </footer>
+            initParticles();
+            animateParticles();
 
-  <script>
-    function showSuccessMessage() {
-      setTimeout(() => {
-        document.getElementById('success-message').style.display = 'block';
-        document.getElementById('web3form').reset();
-      }, 500);
-    }
-  </script>
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                initParticles();
+            });
+
+
+            // Chat animations
+            const createChatBubble = (text, sender, container, customClasses = '') => {
+                const bubbleWrapper = document.createElement('div');
+                bubbleWrapper.className = `flex ${sender === 'user' ? 'justify-end' : 'justify-start'}`;
+                const bubble = document.createElement('div');
+                bubble.className = `chat-bubble p-2 rounded-xl max-w-[85%] ${customClasses} ${sender === 'user' ? 'bg-indigo-500 text-white rounded-br-none' : 'bg-secondary-dark text-light-slate rounded-bl-none'}`;
+                bubble.innerHTML = `<p>${text}</p>`;
+                bubbleWrapper.appendChild(bubble);
+                container.appendChild(bubbleWrapper);
+                return bubble;
+            };
+
+            const createTypingIndicator = (container) => {
+                const indicatorWrapper = document.createElement('div');
+                indicatorWrapper.className = 'flex justify-start';
+                indicatorWrapper.id = 'typing-indicator';
+                indicatorWrapper.innerHTML = `
+                    <div class="bg-secondary-dark rounded-xl rounded-bl-none p-3 typing-indicator">
+                        <span class="inline-block w-1.5 h-1.5 bg-slate rounded-full"></span>
+                        <span class="inline-block w-1.5 h-1.5 bg-slate rounded-full"></span>
+                        <span class="inline-block w-1.5 h-1.5 bg-slate rounded-full"></span>
+                    </div>`;
+                container.appendChild(indicatorWrapper);
+                return indicatorWrapper;
+            };
+
+            const animateChat = async (container, messages) => {
+                if (!container) return;
+                container.innerHTML = '';
+                for (const msg of messages) {
+                    await new Promise(resolve => setTimeout(resolve, msg.delay));
+                    let indicator;
+                    if (msg.sender === 'lakshmy') {
+                        indicator = createTypingIndicator(container);
+                        container.scrollTop = container.scrollHeight;
+                        await new Promise(resolve => setTimeout(resolve, 800)); 
+                        container.removeChild(indicator);
+                    }
+                    const bubble = createChatBubble(msg.text, msg.sender, container, msg.classes);
+                    setTimeout(() => { container.scrollTop = container.scrollHeight; }, 50);
+                    await new Promise(resolve => setTimeout(resolve, 50));
+                    bubble.style.opacity = 1;
+                    bubble.style.transform = 'scale(1)';
+                }
+            };
+
+            const heroChatMessages = [
+                 { sender: 'user', text: "Can I afford a 1-week trip to Goa in December?", delay: 200 },
+                 { sender: 'lakshmy', text: "Running the numbers... My analysis shows that while you can afford it, a trip in December would delay your 'Wedding Fund' goal by 4 months.", delay: 300 },
+                 { sender: 'lakshmy', text: "However, if you shift the trip to February, you can enjoy Goa *and* keep your wedding plans perfectly on track. Want me to model that for you?", delay: 300 },
+            ];
+            
+            const goalChatMessages = [
+                { sender: 'user', text: "I want to buy the new iPhone.", delay: 200 },
+                { sender: 'lakshmy', text: "Great choice! Let's make it happen. What's the target amount?", delay: 300 },
+                { sender: 'user', text: "Around ₹1,20,000", delay: 400 },
+                { sender: 'lakshmy', text: "Got it. And what's your target timeline?", delay: 300 },
+                { sender: 'user', text: "12 months from now.", delay: 400},
+                { sender: 'lakshmy', text: "Perfect. I've set up your 'New iPhone' goal. I'll help you track your progress!", delay: 300 }
+            ];
+
+            const retireChatMessages = [
+                { sender: 'user', text: "How am I doing for my retirement goal?", delay: 200 },
+                { sender: 'lakshmy', text: "You're on track to accumulate a corpus of **₹1.7 Crore** by age 60. Well done!", delay: 300 },
+                { sender: 'lakshmy', text: "Here's the key insight: adjusted for inflation, that will feel like **₹45 Lakhs** in today's money.", delay: 300 },
+                 { sender: 'lakshmy', text: "We can definitely work on boosting that number. Ready to explore some options?", delay: 300 }
+            ];
+
+            // Intersection Observers for animations
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.4 }; 
+            
+            const heroObserver = new IntersectionObserver((entries, observer) => {
+                if (entries[0].isIntersecting) {
+                    animateChat(document.getElementById('hero-chat-container'), heroChatMessages);
+                    observer.unobserve(entries[0].target);
+                }
+            }, observerOptions);
+            if (document.getElementById('hero-chat-container')) {
+                heroObserver.observe(document.getElementById('hero-chat-container'));
+            }
+
+            const useCasesObserver = new IntersectionObserver((entries, observer) => {
+                 if (entries[0].isIntersecting) {
+                    animateChat(document.getElementById('goal-chat-container'), goalChatMessages);
+                    animateChat(document.getElementById('retire-chat-container'), retireChatMessages);
+                    observer.unobserve(entries[0].target);
+                }
+            }, observerOptions);
+             if (document.getElementById('use-cases')) {
+                useCasesObserver.observe(document.getElementById('use-cases'));
+            }
+            
+            const lakshmyWayObserver = new IntersectionObserver((entries, observer) => {
+                if(entries[0].isIntersecting){
+                    const checks = document.querySelectorAll('.animated-check');
+                    checks.forEach((check, index) => {
+                        setTimeout(() => {
+                            check.style.opacity = '1';
+                            check.style.transform = 'translateX(0)';
+                        }, index * 200);
+                    });
+                    observer.unobserve(entries[0].target);
+                }
+            }, {threshold: 0.5});
+            if(document.getElementById('lakshmy-way')){
+                lakshmyWayObserver.observe(document.getElementById('lakshmy-way'));
+            }
+
+            const sections = document.querySelectorAll('.section-fade-in');
+            const fadeInObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        fadeInObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            sections.forEach(section => { fadeInObserver.observe(section); });
+
+            // Form handling
+            const handleFormSubmit = async (form, messageDiv) => {
+                const formData = new FormData(form);
+                const object = Object.fromEntries(formData.entries());
+                const json = JSON.stringify(object);
+                messageDiv.textContent = "Submitting...";
+                messageDiv.style.color = '#c792ea'; // lavender
+
+                try {
+                    const response = await fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: json
+                    });
+
+                    const result = await response.json();
+                    if (result.success) {
+                        messageDiv.textContent = "✅ Thanks! You're on the early access list.";
+                        messageDiv.style.color = '#34d399'; // green-400
+                        form.reset();
+                    } else {
+                        console.log('Error', result);
+                        messageDiv.textContent = result.message || "An error occurred.";
+                        messageDiv.style.color = '#f87171'; // red-400
+                    }
+                } catch (error) {
+                    console.log(error);
+                    messageDiv.textContent = "An error occurred submitting the form.";
+                    messageDiv.style.color = '#f87171'; // red-400
+                } finally {
+                    setTimeout(() => {
+                        messageDiv.textContent = '';
+                    }, 6000);
+                }
+            };
+            
+            const formHero = document.getElementById('waitlist-form-hero');
+            const messageHero = document.getElementById('form-message-hero');
+            formHero.addEventListener('submit', function (e) {
+                e.preventDefault();
+                handleFormSubmit(this, messageHero);
+            });
+
+            const formCta = document.getElementById('waitlist-form-cta');
+            const messageCta = document.getElementById('form-message-cta');
+            formCta.addEventListener('submit', function (e) {
+                e.preventDefault();
+                handleFormSubmit(this, messageCta);
+            });
+        });
+    </script>
 </body>
 </html>
-
-
-
